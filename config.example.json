@@ -1,0 +1,135 @@
+{
+    "_title": "Welcome satr14",
+    "_subtitle": "Homelab is up and running",
+    "_engine": "https://google.com/search?udm=14&q=",
+    "links": [
+        {
+            "name": "tailscale",
+            "desc": "network vpn",
+            "url": {
+                "prot": "https",
+                "host": "login.tailscale.com",
+                "port": 443,
+                "path": "/"
+            }
+        },
+        {
+            "name": "proxmox",
+            "desc": "vms and cts",
+            "url": {
+                "prot": "https",
+                "host": "192.168.1.69",
+                "port": 8006,
+                "path": "/"
+            }
+        },
+        {
+            "name": "playit.gg",
+            "desc": "forward ports",
+            "url": {
+                "prot": "https",
+                "host": "playit.gg",
+                "port": 443,
+                "path": "/account/tunnels"
+            }
+        },
+        {
+            "name": "vscode",
+            "desc": "code editor",
+            "url": {
+                "prot": "https",
+                "host": "vscode.dev",
+                "port": 443,
+                "path": "/tunnel/dev"
+            }
+        },
+        {
+            "name": "openwrt",
+            "desc": "virtual router",
+            "ping": true,
+            "url": {
+                "prot": "http",
+                "host": "192.168.1.128",
+                "port": 80,
+                "path": "/cgi-bin/luci"
+            }
+        },
+        {
+            "name": "portainer",
+            "desc": "manage docker",
+            "ping": true,
+            "url": {
+                "prot": "https",
+                "host": "192.168.1.42",
+                "port": 9443,
+                "path": "/"
+            }
+        },
+        {
+            "name": "pihole",
+            "desc": "dns sinkhole",
+            "ping": true,
+            "url": {
+                "prot": "http",
+                "host": "192.168.1.42",
+                "port": 8088,
+                "path": "/admin"
+            }
+        },
+        {
+            "name": "2fauth",
+            "desc": "2fa codes",
+            "ping": true,
+            "url": {
+                "prot": "http",
+                "host": "192.168.1.42",
+                "port": 8090,
+                "path": "/"
+            }
+        },
+        {
+            "name": "crafty",
+            "desc": "mc server",
+            "ping": true,
+            "url": {
+                "prot": "https",
+                "host": "192.168.1.37",
+                "port": 8443,
+                "path": "/panel"
+            }
+        },
+        {
+            "name": "chromium",
+            "desc": "remote browser",
+            "ping": true,
+            "url": {
+                "prot": "http",
+                "host": "192.168.1.42",
+                "port": 3000,
+                "path": "/"
+            }
+        },
+        {
+            "name": "guacamole",
+            "desc": "remote desktop",
+            "ping": true,
+            "url": {
+                "prot": "http",
+                "host": "192.168.1.42",
+                "port": 8080,
+                "path": "/"
+            }
+        },
+        {
+            "name": "snapdrop",
+            "desc": "send files",
+            "ping": true,
+            "url": {
+                "prot": "http",
+                "host": "192.168.1.42",
+                "port": 8095,
+                "path": "/"
+            }
+        }
+    ]
+}

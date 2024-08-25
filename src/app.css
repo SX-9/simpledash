@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* { @apply transition-all; }
+body { @apply ctp-mocha bg-ctp-crust text-ctp-text; }
+h1 { @apply font-bold text-3xl; }
+h2 { @apply font-bold text-xl; }
+a { @apply text-ctp-sapphire underline; }
+input[type=search] { @apply bg-ctp-base text-ctp-text w-full rounded-full py-2 px-4 outline-ctp-surface0 outline-2 outline-double; }
+
+.online { @apply text-ctp-green; }
+.offline { @apply text-ctp-red; }
