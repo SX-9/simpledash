@@ -1,7 +1,8 @@
 {
-    "_title": "Welcome satr14",
-    "_subtitle": "Homelab is up and running",
-    "_engine": "https://google.com/search?udm=14&q=",
+    "title": "Welcome satr14",
+    "subtitle": "Homelab is up and running",
+    "engine": "https://google.com/search?udm=14&q=",
+    "newtab": false,
     "links": [
         {
             "name": "tailscale",
