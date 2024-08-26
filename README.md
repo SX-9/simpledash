@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/0ef534f0-d788-4797-9c33-9bd43c63661a)
+![image](https://github.com/user-attachments/assets/c0609dfc-4a59-4ffe-8540-796c32f8867c)
 
 ```sh
 export INSTALLATION_DIR=/root/simpledash # can be anything you want
