@@ -2,6 +2,8 @@
     "title": "Welcome satr14",
     "subtitle": "Homelab is up and running",
     "engine": "https://google.com/search?udm=14&q=",
+    "bg": "https://picsum.photos/200/300",
+    "layout": "vertical",
     "newtab": false,
     "links": [
         {

@@ -1,10 +1,16 @@
 <script>
     import "../app.css";
+    import { onMount } from 'svelte';
+
+    /** @type {import('./$types').PageData} */
+    export let data;
 </script>
 
 <svelte:head>
     <title>simpledash</title>
 </svelte:head>
+
+<div style={`background-image:url(${data?.bg})`} class="fixed top-0 left-0 w-screen h-screen -z-10 opacity-20 blur-sm bg-cover bg-center bg-no-repeat"></div>
 
 <slot />
 
