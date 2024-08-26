@@ -15,8 +15,9 @@
     <div class="lg:w-[calc(100vw-10rem)] md:w-[calc(100vw-15rem)] w-[calc(100vw-2rem)] my-4">
         {#if data?.engine}
             <form on:submit={() => {
-                window.open(data.engine + search)
-                search = ''
+                if (data?.newtab) window.open(data.engine + search);
+                else window.location.href = data.engine + search;
+                search = '';
             }}>
                 <!-- svelte-ignore a11y-autofocus -->
                 <input type="search" bind:value={search} placeholder="Web Search..." autofocus />
