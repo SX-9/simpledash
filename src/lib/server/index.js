@@ -1,6 +1,6 @@
 import fs from 'node:fs';
 import { env } from '$env/dynamic/private';
-import { dev } from '$app/environment';
+import { dev, building } from '$app/environment';
 import { ping as tcpPing } from 'tcp-ping';
 
 /**
@@ -25,7 +25,7 @@ import { ping as tcpPing } from 'tcp-ping';
  * @property {string} engine
  * @property {Link[]} links
  */
-export let config = JSON.parse(fs.readFileSync(!dev ? (env.CONFIG_PATH || '/etc/simpledash.json') : './config.json', 'utf8'));
+export let config = JSON.parse(fs.readFileSync(!dev ? (env.CONFIG_PATH || '/etc/simpledash.json') : (building ? './config.example.json' : './config.json'), 'utf8'));
 
 /**
  * Reloads the config variable with the new file contents.
