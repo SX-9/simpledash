@@ -25,7 +25,7 @@ import { ping as tcpPing } from 'tcp-ping';
  * @property {string} engine
  * @property {Link[]} links
  */
-export let config = JSON.parse(fs.readFileSync(!dev ? (env.CONFIG_PATH || '/etc/simpledash.json') : (building ? './config.example.json' : './config.json'), 'utf8'));
+export let config = JSON.parse(fs.readFileSync(!dev ? (env.CONFIG_PATH || (building ? './config.example.json' : '/etc/simpledash.json')) : './config.json', 'utf8'));
 
 /**
  * Reloads the config variable with the new file contents.
