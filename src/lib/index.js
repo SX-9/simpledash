@@ -17,7 +17,10 @@ export function urlString(url) {
  * @param {boolean} newtab 
  */
 export function confirmOpen(e, url, online = true, newtab = false) {
-    if (online) window.open(url, '_blank');
+    if (online) {
+        if (newtab) window.open(url, '_blank');
+        else window.location.href = url;
+    }
     else if (confirm('URL Offline, Continue?')) {
         if (newtab) window.open(url, '_blank');
         else window.location.href = url;
