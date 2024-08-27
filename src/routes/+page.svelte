@@ -27,7 +27,7 @@
     <div class="w-full">
         <div class="flex flex-wrap justify-center items-center my-2 gap-2 w-full">
             {#each data.links as link, i}
-                <button on:click={(e) => confirmOpen(e, urlString(link.url), $statuses?.[i])} class="bg-ctp-base p-4 m-1 w-full sm:w-[45%] lg:w-[31%] xl:w-1/5 2xl:w-1/6 flex items-center min-h-12 h-fit gap-2 outline-ctp-surface0 outline-2 outline-double">
+                <button on:click={(e) => confirmOpen(e, urlString(link.url), $statuses?.[i], data?.newtab)} class="bg-ctp-base p-4 m-1 w-full sm:w-[45%] lg:w-[31%] xl:w-1/5 2xl:w-1/6 flex items-center min-h-12 h-fit gap-2 outline-ctp-surface0 outline-2 outline-double">
                     <div class="flex-1 flex flex-col justify-center items-start">
                         <h2>{link.name}</h2>
                         <span class="text-md">{link.desc}</span>
