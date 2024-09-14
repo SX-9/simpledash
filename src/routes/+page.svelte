@@ -27,12 +27,19 @@
     <div class="w-full">
         <div class="flex flex-wrap justify-center items-center my-2 gap-2 w-full">
             {#each data.links as link, i}
-                <button on:click={(e) => confirmOpen(e, urlString(link.url), $statuses?.[i])} class="bg-ctp-base p-4 m-1 w-full sm:w-[45%] lg:w-[31%] xl:w-1/5 2xl:w-1/6 flex items-center min-h-12 h-fit gap-2 outline-ctp-surface0 outline-2 outline-double">
-                    <div class="flex-1 flex flex-col justify-center items-start">
+                <button on:click={(e) => confirmOpen(e, urlString(link.url), $statuses?.[i])} class:offline={!$statuses?.[i] && link?.ping} class:online={$statuses?.[i] && link?.ping} class="group bg-ctp-base p-4 m-1 w-full sm:w-[45%] lg:w-[31%] xl:w-1/5 2xl:w-1/6 flex items-center min-h-12 h-fit gap-2 outline-ctp-surface0 outline-2 outline hover">
+                    <div class="flex-1 flex flex-col justify-center items-start group-hover:hidden">
                         <h2>{link.name}</h2>
-                        <span class="text-md">{link.desc}</span>
+                        <span>{link.desc}</span>
                     </div>
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 outline-ctp-surface0 outline-2 outline-double text-ctp-sapphire rounded-full " class:offline={!$statuses?.[i] && link?.ping} class:online={$statuses?.[i] && link?.ping} transform={`rotate(${!link?.ping ? '90' : (!$statuses?.[i] ? '180' : '0')})`} viewBox="0 0 24 24"><path fill="currentColor" d="m7 14l5-5l5 5z"/></svg>
+                    <div class="flex-1 hidden flex-col justify-center items-start group-hover:flex">
+                        <h2>{link.url.host}{[80,443].includes(link.url.port) ? '' : `:${link.url.port}`}</h2>
+                        <span>{
+                            !link?.ping ? 'external link' : `service ${($statuses?.[i] ? 'online' : 'offline')}`
+                        }</span>
+                    </div>
+                    <!-- <svg xmlns="http://www.w3.org/2000/svg" class="h-8 outline-ctp-surface0 outline-2 outline-double text-ctp-sapphire rounded-full " class:offline={!$statuses?.[i] && link?.ping} class:online={$statuses?.[i] && link?.ping} transform={`rotate(${!link?.ping ? '90' : (!$statuses?.[i] ? '180' : '0')})`} viewBox="0 0 24 24"><path fill="currentColor" d="m7 14l5-5l5 5z"/></svg> -->
+                    <div class="w-1 h-8 rounded-full bg-ctp-sapphire group-hover:hidden" class:offline={!$statuses?.[i] && link?.ping} class:online={$statuses?.[i] && link?.ping}></div>
                 </button>
             {/each}
         </div>
