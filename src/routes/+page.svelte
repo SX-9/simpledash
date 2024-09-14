@@ -27,7 +27,7 @@
     <div class="w-full">
         <div class="flex flex-wrap justify-center items-center my-2 gap-2 w-full">
             {#each data.links as link, i}
-                <button on:click={(e) => confirmOpen(e, urlString(link.url), $statuses?.[i])} class:offline={!$statuses?.[i] && link?.ping} class:online={$statuses?.[i] && link?.ping} class="group bg-ctp-base p-4 m-1 w-full sm:w-[45%] lg:w-[31%] xl:w-1/5 2xl:w-1/6 flex items-center min-h-12 h-fit gap-2 outline-ctp-surface0 outline-2 outline hover">
+                <button on:click={(e) => confirmOpen(e, urlString(link.url), $statuses?.[i], data?.newtab)} class:offline={!$statuses?.[i] && link?.ping} class:online={$statuses?.[i] && link?.ping} class="group bg-ctp-base p-4 m-1 w-full sm:w-[45%] lg:w-[31%] xl:w-1/5 2xl:w-1/6 flex items-center min-h-12 h-fit gap-2 outline-ctp-surface0 outline-2 outline hover">
                     <div class="flex-1 flex flex-col justify-center items-start group-hover:hidden">
                         <h2>{link.name}</h2>
                         <span>{link.desc}</span>

@@ -14,10 +14,17 @@ export function urlString(url) {
  * @param {Event} e
  * @param {string} url
  * @param {boolean} online
+ * @param {boolean} newtab 
  */
-export function confirmOpen(e, url, online = true) {
-    if (online) window.open(url, '_blank');
-    else if (confirm('URL Offline, Continue?')) window.open(url, '_blank');
+export function confirmOpen(e, url, online = true, newtab = false) {
+    if (online) {
+        if (newtab) window.open(url, '_blank');
+        else window.location.href = url;
+    }
+    else if (confirm('URL Offline, Continue?')) {
+        if (newtab) window.open(url, '_blank');
+        else window.location.href = url;
+    };
 }
 
 /**

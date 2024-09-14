@@ -1,38 +1,24 @@
-# create-svelte
+![image](https://github.com/user-attachments/assets/c0609dfc-4a59-4ffe-8540-796c32f8867c)
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/main/packages/create-svelte).
+```sh
+export INSTALLATION_DIR=/root/simpledash # can be anything you want
 
-## Creating a project
+# installing
+git clone https://github.com/SX-9/simpledash $INSTALLATION_DIR
+cd $INSTALLATION_DIR
+npm i && npm run build
 
-If you're seeing this, you've probably already done this step. Congrats!
+mv config.example.json config.json
+vim config.json # configuration
 
-```bash
-# create a new project in the current directory
-npm create svelte@latest
+docker run -itd --name simpledash \
+    --restart unless-stopped -p 8097:3000 \
+    -v $INSTALLATION_DIR:/simpledash \
+    -e CONFIG_PATH="/simpledash/config.json" \
+    node:18.20-bookworm-slim /simpledash/build/index.js
 
-# create a new project in my-app
-npm create svelte@latest my-app
+# updating
+cd $INSTALLATION_DIR
+git pull && npm i && npm run build
+docker restart simpledash
 ```
-
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
-```bash
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
-
-## Building
-
-To create a production version of your app:
-
-```bash
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
